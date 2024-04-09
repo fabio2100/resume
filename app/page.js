@@ -1,19 +1,21 @@
-import Tecnicos from "./components/Tecnicos";
+import Titular from "./components/Titular";
 
 export default function Home() {
   return (
     <>
-    <section>Hero</section>
-    <section>About</section>
-    <section>Facts</section>
-    <Tecnicos />
-    <section>Resume</section>
-    <section>Portfolio</section>
-    <section>Cursos</section>
-    <section>Idiomas</section>
-    <section>Habilidades</section>
-    <section>Contact</section>
-    <section>Footer</section>
+    <div className="container mt-3">
+      <div className="row">
+        <div className="col-12 col-sm-5">
+          <section>About</section>
+          <section>Habilidades</section>
+        </div>
+        <div className="col-12 col-sm-7">
+          <Titular />
+          <section>Experiencia Laboral</section>
+          <section>Educación</section>
+        </div>
+      </div>
+    </div>
     </>
   )
 }
