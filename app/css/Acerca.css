@@ -1,0 +1,25 @@
+.acerca{
+    background-color: #e6ebed;
+    text-align: center;
+    padding-top: 1em;
+}
+
+.imagenPerfil{
+    border-radius: 50%;
+    border: .25em solid white;
+    max-width: 15em;
+    
+}
+
+.textoAcerca{
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: justify;
+}
+
+.tituloAcerca{
+    text-align: left;
+    color: #111155;
+    font-size: 1.75em;
+    font-weight: 600;
+}
