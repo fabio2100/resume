@@ -1,3 +1,3 @@
 export default function Titulo({children}){
-    return <h1>{children}</h1>
+    return <p className="titulo">{children}</p>
 }

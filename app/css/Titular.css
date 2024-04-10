@@ -7,6 +7,11 @@
 
 .ocupacionTitular{
     font-weight: 600;
-    font-size: 40px;
+    font-size: 36px;
     width: 100%;
+    line-height: 35px;
+}
+
+.divTitular{
+    margin-bottom: 3em;
 }
