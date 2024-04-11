@@ -1,20 +1,23 @@
-export default function TextoAcerca({titulo=false,lista=false,texto=false}){
+export default function TextoAcerca({titulo=false,lista=false,texto=false,subtitulo=false,listaSimple=false}){
 
     let listItems;
     if(lista){
         listItems = lista.map(element => {
-            return <p key={element.nombre}>{element.nombre}: {element.descripcion} </p>
+            return <li key={element.nombre}>{element.nombre}: {element.descripcion} </li>
         })
     }
+    let listaSimpleItems; 
+    //dejo esto aca, hay que renderizar los items de hard skill tratando de usar igual a listitems
     
 
     return <>
         <div className="textoAcerca">
             <p className="tituloAcerca">{titulo}</p>
+            <p className="subtitulo">{subtitulo}</p>
             <p>{texto}</p>
-            <div className="listado">
+            <ul className="listado">
                 {listItems}
-            </div>
+            </ul>
         </div>
     </>
 
