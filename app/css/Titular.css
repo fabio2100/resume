@@ -1,13 +1,13 @@
 .nombreTitular{
     color: #111155;
     font-weight: 900;
-    font-size: 72px;
+    font-size: 5em;
     line-height: 65px;
 }
 
 .ocupacionTitular{
     font-weight: 600;
-    font-size: 36px;
+    font-size: 3em;
     width: 100%;
     line-height: 35px;
 }

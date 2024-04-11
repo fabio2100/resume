@@ -12,3 +12,7 @@ body {
     width: 100%;
     padding-left: 0.25em;
 }
+
+.listado{
+    line-height: 1;
+}
