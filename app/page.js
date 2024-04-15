@@ -9,11 +9,11 @@ export default function Home() {
     <>
     <div className="container mt-3">
       <div className="row">
-        <div className="col-12 col-sm-5">
+        <div className="col-12 col-md-5 order-2">
           <Acerca />
           <Habilidades />
         </div>
-        <div className="col-12 col-sm-7">
+        <div className="col-12 col-md-7 order-1">
           <Titular />
           <ExperienciaLaboral />
           <Educacion />
