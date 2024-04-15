@@ -7,6 +7,11 @@ export default function TextoAcerca({titulo=false,lista=false,texto=false,subtit
         })
     }
     let listaSimpleItems; 
+    if(listaSimple){
+        listaSimpleItems = listaSimple.map(element =>{
+            return <li key={element}>{element}</li>
+        })
+    }
     //dejo esto aca, hay que renderizar los items de hard skill tratando de usar igual a listitems
     
 
@@ -17,6 +22,9 @@ export default function TextoAcerca({titulo=false,lista=false,texto=false,subtit
             <p>{texto}</p>
             <ul className="listado">
                 {listItems}
+            </ul>
+            <ul className="listado">
+                {listaSimpleItems}
             </ul>
         </div>
     </>
