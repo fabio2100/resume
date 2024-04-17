@@ -9,13 +9,12 @@
     border-radius: 50%;
     border: .25em solid white;
     max-width: 15em;
-    
+    rotate: 15deg;
 }
 
 .textoAcerca{
     padding-left: 1em;
     padding-right: 1em;
-    padding-top: 1em;
     text-align: justify;
     line-height: 21px;
 }

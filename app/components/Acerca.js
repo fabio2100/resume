@@ -20,7 +20,7 @@ export default function Acerca(){
 
     return <>
         <div className="acerca">
-            <img className="imagenPerfil mb-4" src='imagen.jfif'/>
+            <img className="imagenPerfil mb-4" src='imagen.png'/>
             <TextoAcerca titulo={tituloAcerca} texto={infoAcerca}/>
             <TextoAcerca titulo={datos} lista={arrayInfoDatos}/>       
         </div>

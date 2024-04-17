@@ -9,14 +9,20 @@ export default function Home() {
     <>
     <div className="container mt-3">
       <div className="row">
-        <div className="col-12 col-md-5 order-2">
+        <div className="col-12 col-md-5 hiddenBig">
           <Acerca />
           <Habilidades />
         </div>
-        <div className="col-12 col-md-7 order-1">
+        <div className="col-12 col-md-7">
           <Titular />
+          <div className="hiddenSmall">
+            <Acerca/>
+          </div>
           <ExperienciaLaboral />
           <Educacion />
+          <div className="hiddenSmall">
+            <Habilidades />
+          </div>
         </div>
       </div>
     </div>
