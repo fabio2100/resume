@@ -1,8 +1,10 @@
+'use client'
 import ExperienciaLaboral from "./components/ExperienciaLaboral";
 import Educacion from "./components/Educacion";
 import Titular from "./components/Titular";
 import Acerca from "./components/Acerca";
 import Habilidades from "./components/Habilidades";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -26,6 +28,7 @@ export default function Home() {
         </div>
       </div>
     </div>
+    <Footer />
     </>
   )
 }
