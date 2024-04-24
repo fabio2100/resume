@@ -6,6 +6,19 @@ import {RiTelegramLine} from "react-icons/ri"
 import {MdOutlineNightlight} from "react-icons/md"
 
 const Footer = () => {
+
+  const clickEvent = () => {
+    console.log('click')
+  }
+
+  const telegramEvent = () => {
+    window.open('https://t.me/fabios21','_blank')
+  }
+
+  const whatsAppEvent = () => {
+    window.open(`https://wa.me?phone=5492616071225`)
+  }
+
   const footerRef = useRef(null);
 
   useEffect(() => {
@@ -31,11 +44,11 @@ const Footer = () => {
 
   return (
     <footer ref={footerRef} className="footer">
-        <BsTelegram className='footerIcon' />
-        <BsWhatsapp className='footerIcon' />
-        <BsEnvelope className='footerIcon' />
-        <MdOutlineNightlight className='footerIcon' />
-        <AddCircleOutlineOutlinedIcon className='footerIcon' />
+        <BsTelegram className='footerIcon'  onClick={telegramEvent}/>
+        <BsWhatsapp className='footerIcon'  onClick={whatsAppEvent}/>
+        <BsEnvelope className='footerIcon'  onClick={clickEvent}/>
+        <MdOutlineNightlight className='footerIcon' onClick={clickEvent} />
+        <AddCircleOutlineOutlinedIcon className='footerIcon' onClick={clickEvent} />
     </footer>
   );
 };

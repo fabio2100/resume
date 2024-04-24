@@ -17,4 +17,12 @@
 
 .footerIcon:hover{
     cursor: pointer;
+    animation: iconMove .3s forwards;
+}
+
+@keyframes iconMove {
+    to {
+        width: 1.5em;
+        height: 1.5em;
+    }
 }
