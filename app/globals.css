@@ -1,5 +1,14 @@
 body {
     max-width: 210cm;
+    opacity: 0;
+    animation: aparition 2s forwards;
+}
+
+@keyframes aparition {
+  to{
+    opacity: 1;
+  }
+  
 }
 
 .titulo{
@@ -27,4 +36,12 @@ body {
 
 .footer{
   background-color: #111155;
+}
+
+.noche{
+  background-color: black;
+  color: #8E9CF1;
+  box-shadow: 0px 0px 21px 29px rgba(0,0,0,0.51);
+-webkit-box-shadow: 0px 0px 21px 29px rgba(0,0,0,0.51);
+-moz-box-shadow: 0px 0px 21px 29px rgba(0,0,0,0.51);
 }

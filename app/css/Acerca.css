@@ -5,6 +5,13 @@
     padding-bottom: 2em;
 }
 
+.acercaNoche{
+    background-color: #2B3781;
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 2em;
+}
+
 .imagenPerfil{
     border-radius: 50%;
     border: .25em solid white;

@@ -1,11 +1,13 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import '@/app/css/Footer.css'
 import AddCircleOutlineOutlinedIcon from '@mui/icons-material/AddCircleOutlineOutlined';
 import {BsWhatsapp,BsEnvelope,BsTelegram} from "react-icons/bs"
-import {RiTelegramLine} from "react-icons/ri"
 import {MdOutlineNightlight} from "react-icons/md"
+import { LightModeOutlined } from '@mui/icons-material';
 
-const Footer = () => {
+const Footer = ({nigth,setNigth}) => {
+
+
 
   const clickEvent = () => {
     console.log('click')
@@ -16,7 +18,15 @@ const Footer = () => {
   }
 
   const whatsAppEvent = () => {
-    window.open(`https://wa.me?phone=5492616071225`)
+    window.open(`https://wa.me?phone=542616071225`)
+  }
+
+  const mailEvent = () => {
+    console.log('mail evetn')
+  }
+
+  const nigthClick = () =>{
+    setNigth(!nigth);
   }
 
   const footerRef = useRef(null);
@@ -46,8 +56,9 @@ const Footer = () => {
     <footer ref={footerRef} className="footer">
         <BsTelegram className='footerIcon'  onClick={telegramEvent}/>
         <BsWhatsapp className='footerIcon'  onClick={whatsAppEvent}/>
-        <BsEnvelope className='footerIcon'  onClick={clickEvent}/>
-        <MdOutlineNightlight className='footerIcon' onClick={clickEvent} />
+        <BsEnvelope className='footerIcon'  onClick={mailEvent}/>
+        {nigth ? <MdOutlineNightlight className='footerIcon' onClick={nigthClick} /> : <LightModeOutlined className='footerIcon' onClick={nigthClick} />}
+        
         <AddCircleOutlineOutlinedIcon className='footerIcon' onClick={clickEvent} />
     </footer>
   );
