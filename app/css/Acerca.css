@@ -33,6 +33,13 @@
     font-weight: 600;
 }
 
+.tituloAcercaNoche{
+    text-align: left;
+    color: #3e3ec5;
+    font-size: 1.75em;
+    font-weight: 600;
+}
+
 .subtitulo{
     font-weight: 600;
     font-size: 20px;

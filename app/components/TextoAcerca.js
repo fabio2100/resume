@@ -1,4 +1,4 @@
-export default function TextoAcerca({titulo=false,lista=false,texto=false,subtitulo=false,listaSimple=false}){
+export default function TextoAcerca({titulo=false,lista=false,texto=false,subtitulo=false,listaSimple=false,nigth=false}){
 
     let listItems;
     if(lista){
@@ -17,7 +17,7 @@ export default function TextoAcerca({titulo=false,lista=false,texto=false,subtit
 
     return <>
         <div className="textoAcerca">
-            <p className="tituloAcerca">{titulo}</p>
+            <p className={nigth ? "tituloAcerca" : "tituloAcercaNoche"}>{titulo}</p>
             <p className="subtitulo">{subtitulo}</p>
             <p>{texto}</p>
             <ul className="listado">

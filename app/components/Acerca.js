@@ -15,8 +15,8 @@ export default function Acerca({nigth}){
     return <>
         <div className={nigth ? "acerca" : "acercaNoche"}>
             <img className="imagenPerfil mb-4" src='imagen.png'/>
-            <TextoAcerca titulo={tituloAcerca} texto={infoAcerca}/>
-            <TextoAcerca titulo={datos} lista={arrayInfoDatos}/>       
+            <TextoAcerca noche={nigth} titulo={tituloAcerca} texto={infoAcerca}/>
+            <TextoAcerca noche={nigth} titulo={datos} lista={arrayInfoDatos}/>       
         </div>
     </>
 }
