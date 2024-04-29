@@ -5,7 +5,7 @@ import {BsWhatsapp,BsEnvelope,BsTelegram} from "react-icons/bs"
 import {MdOutlineNightlight} from "react-icons/md"
 import { LightModeOutlined } from '@mui/icons-material';
 
-const Footer = ({nigth,setNigth}) => {
+const Footer = ({nigth,setNigth,espanol,setEspanol}) => {
 
 
 
@@ -27,6 +27,10 @@ const Footer = ({nigth,setNigth}) => {
 
   const nigthClick = () =>{
     setNigth(!nigth);
+  }
+
+  const cambiarIdioma = () =>{
+    setEspanol(!espanol)
   }
 
   const footerRef = useRef(null);
@@ -58,8 +62,8 @@ const Footer = ({nigth,setNigth}) => {
         <BsWhatsapp className='footerIcon'  onClick={whatsAppEvent}/>
         <BsEnvelope className='footerIcon'  onClick={mailEvent}/>
         {nigth ? <MdOutlineNightlight className='footerIcon' onClick={nigthClick} /> : <LightModeOutlined className='footerIcon' onClick={nigthClick} />}
-        
         <AddCircleOutlineOutlinedIcon className='footerIcon' onClick={clickEvent} />
+        <span onClick={cambiarIdioma} className='footerText align-middle'>{espanol ? "ES" : "EN"}</span>
     </footer>
   );
 };

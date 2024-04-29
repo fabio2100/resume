@@ -38,3 +38,20 @@
         height: 1.5em;
     }
 }
+
+@keyframes fontMove {
+    to{
+        font-size: 40px;
+    }
+}
+
+.footerText{
+    font-size: 30px;
+    margin-left: .25em;
+    margin-right: .25em;
+}
+
+.footerText:hover{
+    cursor: pointer;
+    animation: fontMove .3s forwards;
+}

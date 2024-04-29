@@ -9,7 +9,8 @@ import { useState } from "react";
 
 export default function Home() {
 
-  const [nigth,setNigth] = useState(true)
+  const [nigth,setNigth] = useState(true);
+  const [espanol,setEspanol] = useState(true);
 
   
 
@@ -18,23 +19,23 @@ export default function Home() {
     <div className={nigth ? "container mt-3 mb-5" :"container mt-3 mb-5 noche"}>
       <div className="row">
         <div className="col-12 col-md-5 hiddenBig">
-          <Acerca  nigth={nigth}/>
-          <Habilidades />
+          <Acerca  nigth={nigth} espanol={espanol}/>
+          <Habilidades espanol={espanol}/>
         </div>
         <div className="col-12 col-md-7">
           <Titular nigth={nigth}/>
           <div className="hiddenSmall">
-            <Acerca nigth={nigth}/>
+            <Acerca nigth={nigth} espanol={espanol}/>
           </div>
-          <ExperienciaLaboral />
+          <ExperienciaLaboral espanol={espanol}/>
           <Educacion />
           <div className="hiddenSmall">
-            <Habilidades />
+            <Habilidades espanol={espanol}/>
           </div>
         </div>
       </div>
     </div>
-    <Footer nigth={nigth} setNigth={setNigth} />
+    <Footer nigth={nigth} setNigth={setNigth} espanol={espanol} setEspanol={setEspanol}/>
     </>
   )
 }
