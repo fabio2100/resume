@@ -5,7 +5,7 @@ export default function Educación({espanol}){
 
     const um = `Universidad de Mendoza`;
     const umSubtitle =  espanol ? `Bioingeniería, 2018` : `Bioengineer, 2018`;
-    const umItems = espanol ?  [`Mendoza, Argentina`,`Carrera de grado`,`Promedio académico: 8.14`] : [`Mendoza, Argentina`,`Five years title`,`Average: 8.14`];
+    const umItems = espanol ?  [`Mendoza, Argentina`,`Carrera de grado`,`Promedio académico: 8.14`] : [`Mendoza, Argentina`,`Five years degree`,`Average: 8.14`];
 
     const isep = espanol ? `Colegio Secundario ISEP` : `ISEP High School`;
     const isepSubtitle = espanol ? `Bachiler en Humanidades y Ciencias Sociales` : `Humanities and social sciences bachelor`;
