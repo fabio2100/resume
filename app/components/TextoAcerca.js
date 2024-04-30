@@ -1,4 +1,4 @@
-export default function TextoAcerca({titulo=false,lista=false,texto=false,subtitulo=false,listaSimple=false,nigth=false}){
+export default function TextoAcerca({titulo=false,lista=false,texto=false,subtitulo=false,listaSimple=false,nigth=false,listaLinks=false,listaSimpleLinks=false}){
 
     let listItems;
     if(lista){
@@ -12,8 +12,20 @@ export default function TextoAcerca({titulo=false,lista=false,texto=false,subtit
             return <li key={element}>{element}</li>
         })
     }
-    //dejo esto aca, hay que renderizar los items de hard skill tratando de usar igual a listitems
     
+    let listaLinksItems;
+    if(listaLinks){
+        listaLinksItems = listaLinks.map(element => {
+            return <li key={element.url}>{element.nombre}: <a target="_blank" href={element.url}>{element.url}</a></li>
+        })
+    }
+
+    let listaSimpleLinksItems; 
+    if(listaSimpleLinks){
+        listaSimpleLinksItems = listaSimpleLinks.map(element =>{
+            return <li key={element}><a target="_blank" href={element}>{element}</a></li>
+        })
+    }
 
     return <>
         <div className="textoAcerca">
@@ -25,6 +37,12 @@ export default function TextoAcerca({titulo=false,lista=false,texto=false,subtit
             </ul>
             <ul className="listado">
                 {listaSimpleItems}
+            </ul>
+            <ul className="listado">
+                {listaLinksItems}
+            </ul>
+            <ul className="listado">
+                {listaSimpleLinksItems}
             </ul>
         </div>
     </>

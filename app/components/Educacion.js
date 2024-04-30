@@ -12,7 +12,7 @@ export default function Educación({espanol}){
     const isepItems = espanol ?  [`Graduado con honores académicos`,`Promedio académico: 9.14`] : [`Graduated with academic honors`,`Average: 9.14`]
 
     return <>
-        <Titulo>EDUCACIÓN</Titulo>
+        <Titulo>{espanol ?"EDUCACIÓN" : "EDUCATION"}</Titulo>
         <TextoAcerca titulo={um} subtitulo={umSubtitle} listaSimple={umItems}/>
         <TextoAcerca titulo={isep} subtitulo={isepSubtitle} listaSimple={isepItems}/>
     </>
