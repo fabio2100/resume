@@ -28,7 +28,7 @@ export default function Home() {
             <Acerca nigth={nigth} espanol={espanol}/>
           </div>
           <ExperienciaLaboral espanol={espanol}/>
-          <Educacion />
+          <Educacion espanol={espanol}/>
           <div className="hiddenSmall">
             <Habilidades espanol={espanol}/>
           </div>
