@@ -66,11 +66,23 @@ export default function Portfolio({espanol}){
     const bugsSolutionsSubtitle = `GitHub`;
     const bugsSolutionsData = [{url:`https://github.com/fabio2100/soluciones`,nombre:urlRepositorio}]
 
+    
 
+    const qrEntradas = espanol ? `Entradas qr` : `Qr entries`;
+    const qrEntradasSubtitle = `Postgresql, NextJs`;
+    const qrEntradasData = [{url:`https://github.com/fabio2100/qrentradas`,nombre:urlRepositorio}]
+
+       
+
+    const resumeOld = espanol ? `Página personal anterior` : `Old personal page`;
+    const resumeOldSubtitle = `Bootstrap`;
+    const resumeOldData = [{url:`https://fabio2100.github.io/curriculum/`,nombre:urlProyecto},{url:`https://github.com/fabio2100/curriculum`,nombre:urlRepositorio}]
 
     return(
         <>
         <Titulo>PORTFOLIO</Titulo>
+        <TextoAcerca titulo={resumeOld} subtitulo={resumeOldSubtitle} listaLinks={resumeOldData}/>
+        <TextoAcerca titulo={qrEntradas} subtitulo={qrEntradasSubtitle} listaLinks={qrEntradasData}/>
         <TextoAcerca titulo={fetchingData} subtitulo={fetchingDataSubtitle} listaLinks={arrayFetchingData}/>
         <TextoAcerca titulo={flagsGame} subtitulo={flagsGameSubtitle} listaLinks={flagsGameData}/>
         <TextoAcerca titulo={prodeSimulator} subtitulo={prodeSimulatorSubtitle} listaLinks={prodeSimulatorData}/>

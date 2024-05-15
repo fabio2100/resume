@@ -12,7 +12,9 @@ export default function Acerca({nigth,espanol}){
     const datos = `Datos de contacto`;
     const datosEn = `Personal Details`;
     const arrayInfoDatos = [{nombre:'Celular',descripcion:`(+54) 261 6071225`},{nombre:'Correo',descripcion:`squizzato.fabio@gmail.com`},{nombre:'Sitio',descripcion:`https://fabio2100.github.io/curriculum/`},{nombre:'Dirección',descripcion:`Godoy Cruz, Mendoza, Argentina`},]
-    const arrayInfoDatosEn = [{nombre:'Phone',descripcion:`(+54) 261 6071225`},{nombre:'Email',descripcion:`squizzato.fabio@gmail.com`},{nombre:'Website',descripcion:`https://fabio2100.github.io/curriculum/`},{nombre:'Adress',descripcion:`Godoy Cruz, Mendoza, Argentina`},]
+    const arrayInfoDatosEn = [{nombre:'Phone',descripcion:`(+54) 261 6071225`},{nombre:'Email',descripcion:`squizzato.fabio@gmail.com`},{nombre:'Adress',descripcion:`Godoy Cruz, Mendoza, Argentina`},]
+
+    const websiteLinks = espanol ? [{url:`https://resume-fabio.vercel.app/`,nombre:'Sitio'}] : [{url:`https://resume-fabio.vercel.app/`,nombre:'Website'}]
 
     const tituloAcercaEn = `About Me`;
     const infoAcercaEn = `I’m Bioengineer graduated, and currently I’m
@@ -25,7 +27,7 @@ export default function Acerca({nigth,espanol}){
         <div className={nigth ? "acerca" : "acercaNoche"}>
             <img className="imagenPerfil mb-4" src='imagen.png'/>
             <TextoAcerca noche={nigth} titulo={espanol ? tituloAcerca : tituloAcercaEn} texto={espanol?infoAcerca:infoAcercaEn}/>
-            <TextoAcerca noche={nigth} titulo={espanol ? datos : datosEn} lista={espanol ? arrayInfoDatos : arrayInfoDatosEn}/>       
+            <TextoAcerca noche={nigth} titulo={espanol ? datos : datosEn} lista={espanol ? arrayInfoDatos : arrayInfoDatosEn} listaLinks={websiteLinks}/>       
         </div>
     </>
 }
