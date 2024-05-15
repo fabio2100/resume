@@ -8,6 +8,7 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import axios from 'axios';
 import Alert from '@mui/material/Alert';
+import { LoadingButton } from '@mui/lab';
 
 
 
@@ -17,7 +18,8 @@ export default function FormDialog({open,setOpen,espanol}) {
     const cancelar = espanol ? `Cancelar` : `Cancel`;
     const enviar = espanol ? `Enviar` : `Send`;
     const [sentMail,setSentMail] = React.useState(false);
-    const [errMail,setErrMail] = React.useState(false)
+    const [errMail,setErrMail] = React.useState(false);
+    const [blockSend,setBlockSend] = React.useState(false);
 
 
 
@@ -33,6 +35,7 @@ export default function FormDialog({open,setOpen,espanol}) {
         PaperProps={{
           component: 'form',
           onSubmit: (event) => {
+            setBlockSend(true)
             event.preventDefault();
             const formData = new FormData(event.currentTarget);
             const formJson = Object.fromEntries(formData.entries());
@@ -52,6 +55,7 @@ export default function FormDialog({open,setOpen,espanol}) {
                 setTimeout(()=>{
                     setSentMail(false)
                     handleClose()
+                    setBlockSend(false)
                 },5000)
             })
             .catch(function(err){
@@ -59,6 +63,7 @@ export default function FormDialog({open,setOpen,espanol}) {
                 setErrMail(true)
                 setTimeout(()=>{
                     setErrMail(false)
+                    setBlockSend(false)
                 },5000)
             })
           },
@@ -98,7 +103,7 @@ export default function FormDialog({open,setOpen,espanol}) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>{cancelar}</Button>
-          <Button type="submit">{enviar}</Button>
+          {blockSend ?  <LoadingButton loading variant="outlined">Submit</LoadingButton> : <Button type="submit">{enviar}</Button>}
         </DialogActions>
       </Dialog>
     </React.Fragment>
