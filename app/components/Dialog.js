@@ -103,7 +103,7 @@ export default function FormDialog({open,setOpen,espanol}) {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>{cancelar}</Button>
-          {blockSend ?  <LoadingButton loading variant="outlined">Submit</LoadingButton> : <Button type="submit">{enviar}</Button>}
+          <LoadingButton loading={blockSend}  type="submit">{enviar}</LoadingButton>
         </DialogActions>
       </Dialog>
     </React.Fragment>
