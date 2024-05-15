@@ -5,9 +5,11 @@ import RemoveCircleOutlineOutlinedIcon from '@mui/icons-material/RemoveCircleOut
 import {BsWhatsapp,BsEnvelope,BsTelegram} from "react-icons/bs"
 import {MdOutlineNightlight} from "react-icons/md"
 import { LightModeOutlined } from '@mui/icons-material';
+import FormDialog from './Dialog';
+
 
 const Footer = ({nigth,setNigth,espanol,setEspanol,seeMore,setSeeMore}) => {
-
+  const [open, setOpen] = React.useState(false);
 
 
   const clickEvent = () => {
@@ -58,14 +60,18 @@ const Footer = ({nigth,setNigth,espanol,setEspanol,seeMore,setSeeMore}) => {
   }, []);
 
   return (
+    <>
+    
+    <FormDialog open={open} setOpen={setOpen} espanol={espanol}/>
     <footer ref={footerRef} className="footer">
         <BsTelegram className='footerIcon'  onClick={telegramEvent}/>
         <BsWhatsapp className='footerIcon'  onClick={whatsAppEvent}/>
-        <BsEnvelope className='footerIcon'  onClick={mailEvent}/>
+        <BsEnvelope className='footerIcon'  onClick={()=>{setOpen(!open)}}/>
         {nigth ? <MdOutlineNightlight className='footerIcon' onClick={nigthClick} /> : <LightModeOutlined className='footerIcon' onClick={nigthClick} />}
         {seeMore ? <RemoveCircleOutlineOutlinedIcon className='footerIcon' onClick={()=>{setSeeMore(false)}} />  : <AddCircleOutlineOutlinedIcon className='footerIcon' onClick={()=>{setSeeMore(true)}} />} 
         <span onClick={cambiarIdioma} className='footerText align-middle'>{espanol ? "ES" : "EN"}</span>
     </footer>
+    </>
   );
 };
 

@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 import Cursos from "./components/Cursos";
 import Portfolio from "./components/Portfolio";
+import FormDialog from "./components/Dialog";
 
 export default function Home() {
 
