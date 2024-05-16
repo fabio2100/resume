@@ -1,3 +1,4 @@
+import LinkIcon from '@mui/icons-material/Link';
 export default function TextoAcerca({titulo=false,lista=false,texto=false,subtitulo=false,listaSimple=false,nigth=false,listaLinks=false,listaSimpleLinks=false}){
 
     let listItems;
@@ -16,14 +17,14 @@ export default function TextoAcerca({titulo=false,lista=false,texto=false,subtit
     let listaLinksItems;
     if(listaLinks){
         listaLinksItems = listaLinks.map(element => {
-            return <li key={element.url}>{element.nombre}: <a target="_blank" href={element.url}>{element.url}</a></li>
+            return <li key={element.url}>{element.nombre}: <a target="_blank" href={element.url}><LinkIcon /></a></li>
         })
     }
 
     let listaSimpleLinksItems; 
     if(listaSimpleLinks){
         listaSimpleLinksItems = listaSimpleLinks.map(element =>{
-            return <li key={element}><a target="_blank" href={element}>{element}</a></li>
+            return <li key={element}><a target="_blank" href={element}><LinkIcon /></a></li>
         })
     }
 

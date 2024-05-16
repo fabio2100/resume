@@ -3,8 +3,8 @@ import Titulo from "./Titulo";
 
 export default function Portfolio({espanol}){
 
-    const urlProyecto = espanol ? `Url del proyecto` : `Project Url`;
-    const urlRepositorio = espanol ? `Url del repositorio` : `Repository Url`;
+    const urlProyecto = espanol ? `Link del proyecto` : `Project Link`;
+    const urlRepositorio = espanol ? `Link del repositorio` : `Repository Link`;
     const urlInnovar = espanol ? `Innovar 2019 awards url` : 'Url de premios Innovar 2019';
     const urlVideo = espanol ? 'Url de un video del software en funcionamiento' : 'Url of a video of software working';
     const urlNoticia = espanol ? `Url de noticia de premiación` : 'Url of the news of the awards';
