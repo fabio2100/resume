@@ -11,7 +11,7 @@ export default function Acerca({nigth,espanol}){
     con buenas relaciones interpersonales.`;
     const datos = `Datos de contacto`;
     const datosEn = `Personal Details`;
-    const arrayInfoDatos = [{nombre:'Celular',descripcion:`(+54) 261 6071225`},{nombre:'Correo',descripcion:`squizzato.fabio@gmail.com`},{nombre:'Sitio',descripcion:`https://fabio2100.github.io/curriculum/`},{nombre:'Dirección',descripcion:`Godoy Cruz, Mendoza, Argentina`},]
+    const arrayInfoDatos = [{nombre:'Celular',descripcion:`(+54) 261 6071225`},{nombre:'Correo',descripcion:`squizzato.fabio@gmail.com`},{nombre:'Dirección',descripcion:`Godoy Cruz, Mendoza, Argentina`},]
     const arrayInfoDatosEn = [{nombre:'Phone',descripcion:`(+54) 261 6071225`},{nombre:'Email',descripcion:`squizzato.fabio@gmail.com`},{nombre:'Adress',descripcion:`Godoy Cruz, Mendoza, Argentina`},]
 
     const websiteLinks = espanol ? [{url:`https://resume-fabio.vercel.app/`,nombre:'Sitio'}] : [{url:`https://resume-fabio.vercel.app/`,nombre:'Website'}]
