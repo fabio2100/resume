@@ -26,14 +26,11 @@ export default function Habilidades({espanol}){
     const softSkillsItems = espanol ?  [`Adaptación, aprendizaje, trabajo individual y en
     grupos multidisciplinarios, pensamiento crítico`] : [`Adaptation, learning, self-managed worker and in
         multidisciplinary groups, critical thinking`];
-    
-    const idiomas = espanol ? `Idiomas` : `Languages`;
-    const idiomasItems = espanol ?  [`Español nativo`,`Inglés nivel B1 - B2`] : [`Spanish Native`,`English: Level B1-B2`]
+
     
     return <>
         <Titulo>{espanol ? 'Habilidades' : 'Skills'}</Titulo>
         <TextoAcerca subtitulo={hardskills} listaSimple={hardSkillsItems}/>
         <TextoAcerca subtitulo={softSkills} listaSimple={softSkillsItems} />
-        <TextoAcerca subtitulo={idiomas} listaSimple={idiomasItems} />
     </>
 }

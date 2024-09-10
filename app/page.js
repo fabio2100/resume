@@ -8,7 +8,8 @@ import Footer from "./components/Footer";
 import { useState } from "react";
 import Cursos from "./components/Cursos";
 import Portfolio from "./components/Portfolio";
-import FormDialog from "./components/Dialog";
+import Idiomas from "./components/Idiomas";
+import EnglishCourses from "./components/EnglishCourses";
 
 export default function Home() {
 
@@ -25,6 +26,8 @@ export default function Home() {
         <div className="col-12 col-md-5 hiddenBig">
           <Acerca  nigth={nigth} espanol={espanol}/>
           <Habilidades espanol={espanol}/>
+          <Idiomas espanol={espanol}/>
+          {seeMore && <EnglishCourses espanol={espanol} />}  
           {seeMore && <Cursos espanol={espanol} />}
         </div>
         <div className="col-12 col-md-7">
@@ -36,6 +39,8 @@ export default function Home() {
           <Educacion espanol={espanol}/>
           { seeMore && <Portfolio espanol={espanol}/>}
           <div className="hiddenSmall">
+            <Idiomas espanol={espanol}/>
+            {seeMore && <EnglishCourses espanol={espanol} />} 
             <Habilidades espanol={espanol}/>
             {seeMore && <Cursos espanol={espanol} />}
           </div>

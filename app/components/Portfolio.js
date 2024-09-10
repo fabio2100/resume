@@ -78,9 +78,15 @@ export default function Portfolio({espanol}){
     const resumeOldSubtitle = `Bootstrap`;
     const resumeOldData = [{url:`https://fabio2100.github.io/curriculum/`,nombre:urlProyecto},{url:`https://github.com/fabio2100/curriculum`,nombre:urlRepositorio}]
 
+    const subeMovimientos = espanol ? `Control de movimientos de tarjeta SUBE` : `SUBE movements control`;
+    const subeMovimientosSubtitle = `React, MUI`;
+    const subeMovimientosData = [{url:`https://movimientossube.vercel.app/`,nombre:urlProyecto},{url:`https://github.com/fabio2100/movimientossube`,nombre:urlRepositorio}]
+    
+
     return(
         <>
         <Titulo>PORTFOLIO</Titulo>
+        <TextoAcerca titulo={subeMovimientos} subtitulo={subeMovimientosSubtitle} listaLinks={subeMovimientosData}/>
         <TextoAcerca titulo={resumeOld} subtitulo={resumeOldSubtitle} listaLinks={resumeOldData}/>
         <TextoAcerca titulo={qrEntradas} subtitulo={qrEntradasSubtitle} listaLinks={qrEntradasData}/>
         <TextoAcerca titulo={fetchingData} subtitulo={fetchingDataSubtitle} listaLinks={arrayFetchingData}/>
