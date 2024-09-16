@@ -15,7 +15,7 @@ export default function Home() {
 
   const [nigth,setNigth] = useState(true);
   const [espanol,setEspanol] = useState(true);
-  const [seeMore,setSeeMore] = useState(false);
+  const [seeMore,setSeeMore] = useState(true);
 
   
 
