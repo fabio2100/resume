@@ -1,4 +1,4 @@
 Perfiles 
-barra inferior siempre visible ?
+arreglar link wp
 descarga de pdf 
 usecontext para nigth e idioma
