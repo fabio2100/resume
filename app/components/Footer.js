@@ -12,9 +12,6 @@ const Footer = ({nigth,setNigth,espanol,setEspanol,seeMore,setSeeMore}) => {
   const [open, setOpen] = React.useState(false);
 
 
-  const clickEvent = () => {
-    console.log('click')
-  }
 
   const telegramEvent = () => {
     window.open('https://t.me/fabios21','_blank')
@@ -22,10 +19,6 @@ const Footer = ({nigth,setNigth,espanol,setEspanol,seeMore,setSeeMore}) => {
 
   const whatsAppEvent = () => {
     window.open(`https://wa.me?phone=542616071225`)
-  }
-
-  const mailEvent = () => {
-    console.log('mail evetn')
   }
 
   const nigthClick = () =>{
@@ -63,7 +56,7 @@ const Footer = ({nigth,setNigth,espanol,setEspanol,seeMore,setSeeMore}) => {
     <>
     
     <FormDialog open={open} setOpen={setOpen} espanol={espanol}/>
-    <footer ref={footerRef} className="footer">
+    <footer ref={footerRef} className="footer visible-footer">
         <BsTelegram className='footerIcon'  onClick={telegramEvent}/>
         <BsWhatsapp className='footerIcon'  onClick={whatsAppEvent}/>
         <BsEnvelope className='footerIcon'  onClick={()=>{setOpen(!open)}}/>
