@@ -18,7 +18,7 @@ const Footer = ({nigth,setNigth,espanol,setEspanol,seeMore,setSeeMore}) => {
   }
 
   const whatsAppEvent = () => {
-    window.open(`https://wa.me?phone=542616071225`)
+    window.open(`https://wa.me/542616071225`)
   }
 
   const nigthClick = () =>{
