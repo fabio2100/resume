@@ -24,7 +24,7 @@ export default function Home() {
     <div className={nigth ? "container mt-3 mb-5" :"container mt-3 mb-5 noche"}>
       <div className="row">
         <div className="col-12 col-md-5 hiddenBig">
-          <Acerca  nigth={nigth} espanol={espanol}/>
+          <Acerca  nigth={nigth} espanol={espanol} seeMore={seeMore}/>
           <Habilidades espanol={espanol}/>
           <Idiomas espanol={espanol}/>
           {seeMore && <EnglishCourses espanol={espanol} />}  
