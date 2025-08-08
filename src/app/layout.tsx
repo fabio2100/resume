@@ -37,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body style={{ fontFamily: inter.style.fontFamily }}>
+      <body className={inter.style.className}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />

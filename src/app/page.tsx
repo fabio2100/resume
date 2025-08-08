@@ -1,13 +1,13 @@
 import { Container, Box, Paper } from '@mui/material';
-import Header from '@/app/components/Header';
-import Profile from '@/app/components/Profile';
-import Skills from '@/app/components/Skills';
-import Experience from '@/app/components/Experience';
-import Education from '@/app/components/Education';
-import Languages from '@/app/components/Languages';
-import Courses from '@/app/components/Courses';
-import Portfolio from '@/app/components/Portfolio';
-import Footer from '@/app/components/Footer';
+import Header from '@/components/Header';
+import Profile from '@/components/Profile';
+import Skills from '@/components/Skills';
+import Experience from '@/components/Experience';
+import Education from '@/components/Education';
+import Languages from '@/components/Languages';
+import Courses from '@/components/Courses';
+import Portfolio from '@/components/Portfolio';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
