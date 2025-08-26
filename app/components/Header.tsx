@@ -5,12 +5,30 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import LanguageIcon from '@mui/icons-material/Language';
-import resumeData from '@/app/data/resume.json';
 
-export default function Header() {
+interface HeaderProps {
+  data: {
+    datosPersonales: {
+      nombre: string;
+      profesion: string;
+      ocupacion: string;
+      foto: string;
+      telefono: string;
+      email: string;
+      direccion: string;
+      sitioWeb: string;
+    };
+    perfiles: {
+      linkedin: string;
+      github: string;
+    };
+  };
+}
+
+export default function Header({ data }: HeaderProps) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const { datosPersonales, perfiles } = resumeData;
+  const { datosPersonales, perfiles } = data;
 
   return (
     <Box

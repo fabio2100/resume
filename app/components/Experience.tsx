@@ -3,20 +3,36 @@
 
 import { Box, Typography, Paper, Divider, Stack, Chip } from '@mui/material';
 import WorkIcon from '@mui/icons-material/Work';
-import resumeData from '@/app/data/resume.json';
+import { useTranslations } from '@/app/hooks/useTranslations';
 
-export default function Experience() {
-  const { experienciaLaboral } = resumeData;
+interface ExperienceProps {
+  data: {
+    experienciaLaboral: {
+      titulo: string;
+      lista: Array<{
+        puesto: string;
+        empresa: string;
+        fecha: string;
+        responsabilidades: string[];
+        tecnologias?: string[];
+      }>;
+    };
+  };
+}
+
+export default function Experience({ data }: ExperienceProps) {
+  const { experienciaLaboral } = data;
+  const { t } = useTranslations();
 
   return (
     <Box component="section" sx={{ mb: 4 }}>
       <Typography variant="h4" component="h2" sx={{ mb: 2, fontWeight: 'bold', color: 'primary.main' }}>
-        Experiencia Laboral
+        {experienciaLaboral.titulo || t('workExperience')}
       </Typography>
       <Divider sx={{ mb: 2 }} />
 
       <Stack spacing={3}>
-        {experienciaLaboral.map((exp: any, index: number) => (
+        {experienciaLaboral.lista.map((exp: any, index: number) => (
           <Paper 
             key={index} 
             elevation={1} 
@@ -58,7 +74,7 @@ export default function Experience() {
             </Typography>
 
             <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 'bold' }}>
-              Responsabilidades:
+              {t('responsibilities')}:
             </Typography>
             <Box component="ul" sx={{ pl: 2, mb: 2 }}>
               {exp.responsabilidades.map((resp: string, i: number) => (
@@ -69,7 +85,7 @@ export default function Experience() {
             </Box>
 
             <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 'bold' }}>
-              Tecnologías:
+              {t('technologies')}:
             </Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
               {exp.tecnologias && exp.tecnologias.map((tech: string, i: number) => (

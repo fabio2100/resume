@@ -4,15 +4,31 @@
 import { Box, Typography, Paper, Divider, Chip, Stack, Link } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Language';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
-import resumeData from '@/app/data/resume.json';
+import { useTranslations } from '@/app/hooks/useTranslations';
 
-export default function Languages() {
-  const { idiomas } = resumeData;
+interface LanguagesProps {
+  data: {
+    idiomas: {
+      titulo: string;
+      lista: string[];
+      cursosIngles: Array<{
+        nombre: string;
+        institucion: string;
+        fecha: string;
+        url?: string;
+      }>;
+    };
+  };
+}
+
+export default function Languages({ data }: LanguagesProps) {
+  const { idiomas } = data;
+  const { t } = useTranslations();
 
   return (
     <Box component="section" sx={{ mb: 4 }}>
       <Typography variant="h4" component="h2" sx={{ mb: 2, fontWeight: 'bold', color: 'primary.main' }}>
-        {idiomas.titulo}
+        {idiomas.titulo || t('languages')}
       </Typography>
       <Divider sx={{ mb: 2 }} />
 
@@ -29,7 +45,7 @@ export default function Languages() {
         <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
           <LanguageIcon color="primary" sx={{ mr: 1 }} />
           <Typography variant="h6" component="h3">
-            Idiomas
+            {t('languages')}
           </Typography>
         </Box>
 
@@ -49,7 +65,7 @@ export default function Languages() {
           <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
             <WorkspacePremiumIcon color="secondary" sx={{ mr: 1 }} />
             <Typography variant="h6" component="h3">
-              Certificaciones de Inglés
+              {t('englishCertifications')}
             </Typography>
           </Box>
 
@@ -74,7 +90,7 @@ export default function Languages() {
                     variant="body2"
                     color="primary"
                   >
-                    Ver certificado
+                    {t('viewCertificate')}
                   </Link>
                 )}
               </Paper>

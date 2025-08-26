@@ -10,8 +10,31 @@ import Languages from '@/app/components/Languages';
 import Courses from '@/app/components/Courses';
 import Portfolio from '@/app/components/Portfolio';
 import Footer from '@/app/components/Footer';
+import LoadingComponent from '@/app/components/LoadingComponent';
+import ErrorComponent from '@/app/components/ErrorComponent';
+import { useResumeData } from '@/app/hooks/useResumeData';
+import { useTranslations } from '@/app/hooks/useTranslations';
 
 export default function Home() {
+  const { data, loading, error } = useResumeData();
+  const { t } = useTranslations();
+
+  if (loading) {
+    return (
+      <Container maxWidth="lg" sx={{ py: 4 }}>
+        <LoadingComponent />
+      </Container>
+    );
+  }
+
+  if (error || !data) {
+    return (
+      <Container maxWidth="lg" sx={{ py: 4 }}>
+        <ErrorComponent error={error || t('couldNotLoadData')} />
+      </Container>
+    );
+  }
+
   return (
     <Container maxWidth="lg" sx={{ py: 4 }}>
       <Paper 
@@ -21,19 +44,19 @@ export default function Home() {
           overflow: 'hidden',
         }}
       >
-        <Header />
+        <Header data={data} />
         
         <Box sx={{ p: { xs: 2, md: 4 } }}>
-          <Profile />
-          <Skills />
-          <Experience />
-          <Education />
-          <Languages />
-          <Courses />
-          <Portfolio />
+          <Profile data={data} />
+          <Skills data={data} />
+          <Experience data={data} />
+          <Education data={data} />
+          <Languages data={data} />
+          <Courses data={data} />
+          <Portfolio data={data} />
         </Box>
         
-        <Footer />
+        <Footer data={data} />
       </Paper>
     </Container>
   );

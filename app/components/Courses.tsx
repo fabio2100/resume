@@ -4,15 +4,29 @@
 import { Box, Typography, Paper, Divider, Link, Grid } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import resumeData from '@/app/data/resume.json';
+import { useTranslations } from '@/app/hooks/useTranslations';
 
-export default function Courses() {
-  const { cursos } = resumeData;
+interface CoursesProps {
+  data: {
+    cursos: {
+      titulo: string;
+      lista: Array<{
+        nombre: string;
+        lugar: string;
+        url?: string;
+      }>;
+    };
+  };
+}
+
+export default function Courses({ data }: CoursesProps) {
+  const { cursos } = data;
+  const { t } = useTranslations();
 
   return (
     <Box component="section" sx={{ mb: 4 }}>
       <Typography variant="h4" component="h2" sx={{ mb: 2, fontWeight: 'bold', color: 'primary.main' }}>
-        Cursos y Certificaciones
+        {cursos.titulo || t('coursesAndCertifications')}
       </Typography>
       <Divider sx={{ mb: 2 }} />
 
@@ -25,7 +39,7 @@ export default function Courses() {
         },
         gap: 2
       }}>
-        {cursos.map((curso: any, index: number) => (
+        {cursos.lista.map((curso: any, index: number) => (
           <Paper
             key={index}
             elevation={1}
@@ -62,7 +76,7 @@ export default function Courses() {
                     fontSize: '0.875rem'
                   }}
                 >
-                  Ver curso <OpenInNewIcon sx={{ ml: 0.5, fontSize: 16 }} />
+                  {t('viewCourse')} <OpenInNewIcon sx={{ ml: 0.5, fontSize: 16 }} />
                 </Link>
               )}
             </Box>

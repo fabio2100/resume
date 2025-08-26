@@ -6,10 +6,25 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import resumeData from '@/app/data/resume.json';
 
-export default function Footer() {
-  const { perfiles, datosPersonales } = resumeData;
+interface FooterProps {
+  data: {
+    perfiles: {
+      linkedin: string;
+      github: string;
+      facebook: string;
+      instagram: string;
+    };
+    datosPersonales: {
+      nombre: string;
+      profesion: string;
+      sitioWeb: string;
+    };
+  };
+}
+
+export default function Footer({ data }: FooterProps) {
+  const { perfiles, datosPersonales } = data;
   const currentYear = new Date().getFullYear();
 
   return (

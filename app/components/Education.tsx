@@ -3,20 +3,35 @@
 
 import { Box, Typography, Paper, Divider, Stack } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
-import resumeData from '@/app/data/resume.json';
+import { useTranslations } from '@/app/hooks/useTranslations';
 
-export default function Education() {
-  const { educacion } = resumeData;
+interface EducationProps {
+  data: {
+    educacion: {
+      titulo: string;
+      lista: Array<{
+        nombre: string;
+        institucion: string;
+        fecha: string;
+        data?: string[];
+      }>;
+    };
+  };
+}
+
+export default function Education({ data }: EducationProps) {
+  const { educacion } = data;
+  const { t } = useTranslations();
 
   return (
     <Box component="section" sx={{ mb: 4 }}>
       <Typography variant="h4" component="h2" sx={{ mb: 2, fontWeight: 'bold', color: 'primary.main' }}>
-        Educación
+        {educacion.titulo || t('education')}
       </Typography>
       <Divider sx={{ mb: 2 }} />
 
       <Stack spacing={3}>
-        {educacion.map((edu: any, index: number) => (
+        {educacion.lista.map((edu: any, index: number) => (
           <Paper 
             key={index} 
             elevation={1} 

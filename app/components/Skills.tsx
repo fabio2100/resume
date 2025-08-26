@@ -2,15 +2,33 @@
 'use client';
 
 import { Box, Typography, Paper, Chip, Divider, Stack } from '@mui/material';
-import resumeData from '@/app/data/resume.json';
+import { useTranslations } from '@/app/hooks/useTranslations';
 
-export default function Skills() {
-  const { habilidades } = resumeData;
+interface SkillsProps {
+  data: {
+    habilidades: {
+      titulo: string;
+      hardSkills: {
+        titulo: string;
+        lista: string[];
+        descripcion: string[];
+      };
+      softSkills: {
+        titulo: string;
+        descripcion: string[];
+      };
+    };
+  };
+}
+
+export default function Skills({ data }: SkillsProps) {
+  const { habilidades } = data;
+  const { t } = useTranslations();
 
   return (
     <Box component="section" sx={{ mb: 4 }}>
       <Typography variant="h4" component="h2" sx={{ mb: 2, fontWeight: 'bold', color: 'primary.main' }}>
-        Habilidades
+        {habilidades.titulo || t('skills')}
       </Typography>
       <Divider sx={{ mb: 2 }} />
 
