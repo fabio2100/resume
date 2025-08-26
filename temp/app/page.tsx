@@ -1,5 +1,3 @@
-'use client';
-
 import { Container, Box, Paper } from '@mui/material';
 import Header from '@/app/components/Header';
 import Profile from '@/app/components/Profile';

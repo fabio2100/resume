@@ -1,10 +1,8 @@
-// app/components/Courses.tsx
-'use client';
-
+// src/components/Courses.tsx
 import { Box, Typography, Paper, Divider, Link, Grid } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
-import resumeData from '@/app/data/resume.json';
+import resumeData from '@/data/resume.json';
 
 export default function Courses() {
   const { cursos } = resumeData;
@@ -72,4 +70,3 @@ export default function Courses() {
     </Box>
   );
 }
-

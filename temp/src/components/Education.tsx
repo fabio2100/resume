@@ -1,9 +1,7 @@
-// app/components/Education.tsx
-'use client';
-
+// src/components/Education.tsx
 import { Box, Typography, Paper, Divider, Stack } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
-import resumeData from '@/app/data/resume.json';
+import resumeData from '@/data/resume.json';
 
 export default function Education() {
   const { educacion } = resumeData;
@@ -72,4 +70,3 @@ export default function Education() {
     </Box>
   );
 }
-

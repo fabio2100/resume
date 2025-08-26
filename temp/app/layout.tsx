@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
@@ -25,6 +24,11 @@ const theme = createTheme({
     fontFamily: inter.style.fontFamily,
   },
 });
+
+export const metadata: Metadata = {
+  title: 'Fabio Squizzato | CV',
+  description: 'Currículum de Fabio Squizzato - Software Developer',
+};
 
 export default function RootLayout({
   children,

@@ -1,12 +1,10 @@
-// app/components/Footer.tsx
-'use client';
-
+// src/components/Footer.tsx
 import { Box, Typography, Link, Stack, IconButton } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import resumeData from '@/app/data/resume.json';
+import resumeData from '@/data/resume.json';
 
 export default function Footer() {
   const { perfiles, datosPersonales } = resumeData;
@@ -86,4 +84,3 @@ export default function Footer() {
     </Box>
   );
 }
-

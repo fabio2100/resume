@@ -1,11 +1,10 @@
-// app/components/Header.tsx
-'use client';
+// src/components/Header.tsx
 import { Box, Typography, Avatar, Stack, IconButton, useTheme, useMediaQuery } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import LanguageIcon from '@mui/icons-material/Language';
-import resumeData from '@/app/data/resume.json';
+import resumeData from '@/data/resume.json';
 
 export default function Header() {
   const theme = useTheme();

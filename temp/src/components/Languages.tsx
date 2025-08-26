@@ -1,10 +1,8 @@
-// app/components/Languages.tsx
-'use client';
-
+// src/components/Languages.tsx
 import { Box, Typography, Paper, Divider, Chip, Stack, Link } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Language';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
-import resumeData from '@/app/data/resume.json';
+import resumeData from '@/data/resume.json';
 
 export default function Languages() {
   const { idiomas } = resumeData;
@@ -85,4 +83,3 @@ export default function Languages() {
     </Box>
   );
 }
-

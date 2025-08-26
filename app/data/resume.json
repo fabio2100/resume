@@ -9,7 +9,7 @@
     "profesion": "Bioingeniero",
     "ocupacion": "Software Developer",
     "foto": "https://avatars.githubusercontent.com/u/70795385?v=4",
-    "acercaDeMi": "Soy graduado en la carrera de Bioingeniería, y actualmente me dedico al desarrollo de software, principalmente desarrollo web. Soy una persona proactiva, responsable y curiosa con buenas relaciones interpersonales."
+    "acercaDeMi": "Soy graduado en la carrera de Bioingeniería, y actualmente me dedico al desarrollo de software, principalmente desarrollo web, especializado en la integración PACS y el uso de protocolo DICOM. Soy una persona proactiva, responsable y curiosa con buenas relaciones interpersonales."
   },
   "perfiles": {
     "linkedin": "https://www.linkedin.com/in/squizzato-fabio/",
@@ -23,13 +23,13 @@
     "hardSkills": {
       "titulo": "Hardskills y tecnologías manejadas",
       "lista": [
-        "NodeJS", "PHP", "CodeIgniter", "Express", "Postman", "MySQL", "MongoDB", "PostgreSQL", "jQuery", "Bootstrap", "Axios", "Vue", "Git"
+        "PACS","DICOM","Vibe Coding","GitHub Copilot","Claude Sonnet","","NodeJS", "PHP", "CodeIgniter", "Express", "Postman", "MySQL", "MongoDB", "PostgreSQL", "jQuery", "Bootstrap", "Axios", "Vue", "Git", "AWS Lambda"
       ],
-      "descripcion": "Comprensión tipo de aplicaciones: monolíticas y microservicios, patrón de diseño MVC, uso y creación de APIS, manipulación de sesiones y control de usuarios con JWT, autorización y autenticación, encriptación, cifrado y hasheado de datos, base de datos relacionales y no relacionales, CSR y SSR, AJAX, SPA, versionados"
+      "descripcion": ["Código asistido por IA, vibe coding: Uso de modelos Gemini, Claude Sonnet y GPT","Comprensión tipo de aplicaciones: monolíticas y microservicios", "Patrón de diseño MVC", "Uso y creación de APIS", "Manipulación de sesiones y control de usuarios con JWT", "Autorización y autenticación", "Encriptación, cifrado y hasheado de datos", "Base de datos relacionales y no relacionales", "CSR y SSR", "AJAX", "SPA", "Versionados"]
     },
     "softSkills": {
       "titulo": "Softskills",
-      "descripcion": "Adaptación, aprendizaje, trabajo individual y en grupos multidisciplinarios, pensamiento crítico"
+      "descripcion": ["Adaptación", "aprendizaje", "trabajo individual y en grupos multidisciplinarios", "pensamiento crítico","Elaboración de documentación"]
     }
   },
   "idiomas": {

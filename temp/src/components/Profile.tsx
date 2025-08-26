@@ -1,8 +1,6 @@
-// app/components/Profile.tsx
-'use client';
-
+// src/components/Profile.tsx
 import { Box, Typography, Paper, Divider } from '@mui/material';
-import resumeData from '@/app/data/resume.json';
+import resumeData from '@/data/resume.json';
 
 export default function Profile() {
   const { datosPersonales } = resumeData;
@@ -19,4 +17,3 @@ export default function Profile() {
     </Box>
   );
 }
-

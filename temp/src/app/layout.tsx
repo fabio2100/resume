@@ -1,5 +1,4 @@
-'use client';
-
+import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
@@ -26,6 +25,11 @@ const theme = createTheme({
   },
 });
 
+export const metadata: Metadata = {
+  title: 'Fabio Squizzato | CV',
+  description: 'Currículum de Fabio Squizzato - Software Developer',
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body style={{ fontFamily: inter.style.fontFamily }}>
+      <body className={inter.style.className}>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             <CssBaseline />

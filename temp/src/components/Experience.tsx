@@ -1,9 +1,7 @@
-// app/components/Experience.tsx
-'use client';
-
+// src/components/Experience.tsx
 import { Box, Typography, Paper, Divider, Stack, Chip } from '@mui/material';
 import WorkIcon from '@mui/icons-material/Work';
-import resumeData from '@/app/data/resume.json';
+import resumeData from '@/data/resume.json';
 
 export default function Experience() {
   const { experienciaLaboral } = resumeData;
@@ -88,4 +86,3 @@ export default function Experience() {
     </Box>
   );
 }
-

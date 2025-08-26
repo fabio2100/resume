@@ -1,5 +1,4 @@
-// app/components/Portfolio.tsx
-'use client';
+// src/components/Portfolio.tsx
 import { useState } from 'react';
 import { 
   Box, 
@@ -23,7 +22,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LanguageIcon from '@mui/icons-material/Language';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import resumeData from '@/app/data/resume.json';
+import resumeData from '@/data/resume.json';
 
 export default function Portfolio() {
   const { portfolio } = resumeData;
@@ -274,4 +273,3 @@ export default function Portfolio() {
     </Box>
   );
 }
-
