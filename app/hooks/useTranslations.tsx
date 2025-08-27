@@ -1,6 +1,7 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useMemo } from 'react';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 interface Translations {
   [key: string]: {
@@ -47,12 +48,8 @@ const translations: Translations = {
 };
 
 export const useTranslations = () => {
-  const [language, setLanguage] = useState('es');
-
-  useEffect(() => {
-    const userLanguage = navigator.language || navigator.languages?.[0] || 'es';
-    setLanguage(userLanguage.toLowerCase().startsWith('en') ? 'en' : 'es');
-  }, []);
+  const { isEnglish } = useLanguage();
+  const language = isEnglish ? 'en' : 'es';
 
   const t = useMemo(() => {
     return (key: string, fallback?: string): string => {

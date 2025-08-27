@@ -142,7 +142,7 @@ export default function Header({ data }: HeaderProps) {
           {datosPersonales.nombre}
         </Typography>
         <Typography variant="h5" component="h2" sx={{ mb: 2, opacity: 0.9 }}>
-          {datosPersonales.ocupacion}
+          {datosPersonales.profesion} | {datosPersonales.ocupacion}
         </Typography>
         <Typography variant="body1" sx={{ mb: 2, opacity: 0.8 }}>
           {datosPersonales.direccion} | {datosPersonales.email} | {datosPersonales.telefono}

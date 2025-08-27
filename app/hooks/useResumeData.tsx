@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useLanguage } from '@/app/contexts/LanguageContext';
 
 interface ResumeData {
   datosPersonales: any;
@@ -17,15 +18,12 @@ export const useResumeData = () => {
   const [data, setData] = useState<ResumeData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const { isEnglish } = useLanguage();
 
   useEffect(() => {
     const fetchResumeData = async () => {
       try {
         setLoading(true);
-        
-        // Detectar el idioma del navegador
-        const userLanguage = navigator.language || navigator.languages[0];
-        const isEnglish = userLanguage.toLowerCase().startsWith('en');
         
         // Seleccionar la URL según el idioma
         const url = isEnglish 
@@ -46,19 +44,21 @@ export const useResumeData = () => {
         setError(err instanceof Error ? err.message : 'Unknown error occurred');
         
         // Fallback a datos locales si falla la petición
-        try {
-          const localData = await import('@/app/data/resume.json');
-          setData(localData.default as ResumeData);
-        } catch (localErr) {
-          console.error('Error loading local fallback data:', localErr);
-        }
+        fetch('/resume.json')
+          .then(response => response.json())
+          .then(localData => {
+            setData(localData as ResumeData);
+          })
+          .catch(localErr => {
+            console.error('Error loading local fallback data:', localErr);
+          });
       } finally {
         setLoading(false);
       }
     };
 
     fetchResumeData();
-  }, []);
+  }, [isEnglish]);
 
   return { data, loading, error };
 };

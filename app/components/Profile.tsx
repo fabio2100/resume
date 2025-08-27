@@ -25,7 +25,14 @@ export default function Profile({ data }: ProfileProps) {
         {datosPersonales.acercaDeMi?.titulo || t('about')}
       </Typography>
       <Divider sx={{ mb: 2 }} />
-      <Paper elevation={0} sx={{ p: 2, bgcolor: 'background.paper', borderRadius: 2 }}>
+      <Paper 
+        elevation={0} 
+        sx={{ 
+          p: 2, 
+          bgcolor: 'transparent',
+          borderRadius: 2 
+        }}
+      >
         <Typography variant="body1">{datosPersonales.acercaDeMi?.descripcion}</Typography>
       </Paper>
     </Box>

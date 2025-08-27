@@ -2,6 +2,8 @@
 
 import { Container, Box, Paper } from '@mui/material';
 import Header from '@/app/components/Header';
+import LanguageToggle from '@/app/components/LanguageToggle';
+import ThemeToggle from '@/app/components/ThemeToggle';
 import Profile from '@/app/components/Profile';
 import Skills from '@/app/components/Skills';
 import Experience from '@/app/components/Experience';
@@ -58,6 +60,8 @@ export default function Home() {
         
         <Footer data={data} />
       </Paper>
+      <ThemeToggle />
+      <LanguageToggle />
     </Container>
   );
 }
