@@ -11,10 +11,20 @@ interface Translations {
 
 const translations: Translations = {
   // Botones y acciones
+  viewProject: { es: 'Ver proyecto', en: 'View project' },
+  viewCode: { es: 'Código', en: 'Code' },
+  viewMore: { es: 'Ver más', en: 'View more' },
   viewCourse: { es: 'Ver curso', en: 'View course' },
   viewCertificate: { es: 'Ver certificado', en: 'View certificate' },
   retry: { es: 'Reintentar', en: 'Retry' },
   close: { es: 'Cerrar', en: 'Close' },
+  cancel: { es: 'Cancelar', en: 'Cancel' },
+  send: { es: 'Enviar', en: 'Send' },
+  email: { es: 'Correo electrónico', en: 'Email' },
+  message: { es: 'Mensaje', en: 'Message' },
+  emailSent: { es: 'Correo enviado correctamente', en: 'Email sent successfully' },
+  emailError: { es: 'Error al enviar el correo', en: 'Error sending email' },
+  contactMe: { es: 'Contáctame', en: 'Contact me' },
   
   // Secciones
   responsibilities: { es: 'Responsabilidades', en: 'Responsibilities' },

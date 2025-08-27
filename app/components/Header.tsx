@@ -1,10 +1,30 @@
 // app/components/Header.tsx
 'use client';
-import { Box, Typography, Avatar, Stack, IconButton, useTheme, useMediaQuery } from '@mui/material';
+import { useState } from 'react';
+import { 
+  Box, 
+  Typography, 
+  Avatar, 
+  Stack, 
+  IconButton, 
+  useTheme, 
+  useMediaQuery,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  Button,
+  TextField,
+  Snackbar,
+  Alert
+} from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import LanguageIcon from '@mui/icons-material/Language';
+import CloseIcon from '@mui/icons-material/Close';
+import LoadingButton from '@mui/lab/LoadingButton';
+import { useTranslations } from '@/app/hooks/useTranslations';
 
 interface HeaderProps {
   data: {
@@ -29,6 +49,71 @@ export default function Header({ data }: HeaderProps) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const { datosPersonales, perfiles } = data;
+  const { t } = useTranslations();
+  const [openModal, setOpenModal] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [snackbar, setSnackbar] = useState<{
+    open: boolean;
+    message: string;
+    severity: 'success' | 'error';
+  }>({
+    open: false,
+    message: '',
+    severity: 'success'
+  });
+
+  const handleOpenModal = () => {
+    setOpenModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setOpenModal(false);
+    setEmail('');
+    setMessage('');
+  };
+
+  const handleSendEmail = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          service_id: 'service_24zahca',
+          template_id: 'template_wcq6rrs',
+          template_params: {
+            from_name: email,
+            message: message,
+            to_name: 'squizzato.fabio@gmail.com',
+          },
+          user_id: '41HCVHUcUyu9BI-vh',
+        }),
+      });
+
+      if (response.ok) {
+        setSnackbar({
+          open: true,
+          message: t('emailSent'),
+          severity: 'success'
+        });
+        handleCloseModal();
+      } else {
+        throw new Error('Failed to send email');
+      }
+    } catch (error) {
+      setSnackbar({
+        open: true,
+        message: t('emailError'),
+        severity: 'error'
+      });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <Box
@@ -87,8 +172,7 @@ export default function Header({ data }: HeaderProps) {
           <IconButton 
             color="inherit" 
             aria-label="Email" 
-            component="a" 
-            href={`mailto:${datosPersonales.email}`}
+            onClick={handleOpenModal}
           >
             <EmailIcon />
           </IconButton>
@@ -104,6 +188,72 @@ export default function Header({ data }: HeaderProps) {
           </IconButton>
         </Stack>
       </Box>
+
+      <Dialog 
+        open={openModal} 
+        onClose={handleCloseModal}
+        maxWidth="sm"
+        fullWidth
+        PaperProps={{
+          sx: { borderRadius: 2 }
+        }}
+      >
+        <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Typography variant="h6">{t('contactMe')}</Typography>
+          <IconButton onClick={handleCloseModal} size="small">
+            <CloseIcon />
+          </IconButton>
+        </DialogTitle>
+        <DialogContent>
+          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mt: 1 }}>
+            <TextField
+              label={t('email')}
+              type="email"
+              fullWidth
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              variant="outlined"
+            />
+            <TextField
+              label={t('message')}
+              multiline
+              rows={4}
+              fullWidth
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              variant="outlined"
+            />
+          </Box>
+        </DialogContent>
+        <DialogActions sx={{ p: 2, pt: 0 }}>
+          <Button onClick={handleCloseModal} disabled={loading}>
+            {t('cancel')}
+          </Button>
+          <LoadingButton
+            onClick={handleSendEmail}
+            loading={loading}
+            variant="contained"
+            disabled={!email || !message}
+          >
+            {t('send')}
+          </LoadingButton>
+        </DialogActions>
+      </Dialog>
+
+      <Snackbar
+        open={snackbar.open}
+        autoHideDuration={6000}
+        onClose={() => setSnackbar({ ...snackbar, open: false })}
+      >
+        <Alert 
+          onClose={() => setSnackbar({ ...snackbar, open: false })} 
+          severity={snackbar.severity}
+          variant="filled"
+          sx={{ width: '100%' }}
+        >
+          {snackbar.message}
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }

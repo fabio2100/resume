@@ -141,7 +141,7 @@ export default function Portfolio({ data }: PortfolioProps) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Ver proyecto
+                        {t('viewProject')}
                       </Button>
                     )}
                     
@@ -154,7 +154,7 @@ export default function Portfolio({ data }: PortfolioProps) {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Código
+                        {t('viewCode')}
                       </Button>
                     )}
                     
@@ -179,7 +179,7 @@ export default function Portfolio({ data }: PortfolioProps) {
                   variant="text"
                   onClick={() => handleOpenDialog(project)}
                 >
-                  Ver más
+                  {t('viewMore')}
                 </Button>
               </Stack>
             </CardActions>
