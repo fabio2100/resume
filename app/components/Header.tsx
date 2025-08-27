@@ -198,8 +198,16 @@ export default function Header({ data }: HeaderProps) {
           sx: { borderRadius: 2 }
         }}
       >
-        <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <Typography variant="h6">{t('contactMe')}</Typography>
+        <DialogTitle 
+          component="div"
+          sx={{ 
+            display: 'flex', 
+            justifyContent: 'space-between', 
+            alignItems: 'center',
+            p: 2
+          }}
+        >
+          <Typography variant="h6" component="div">{t('contactMe')}</Typography>
           <IconButton onClick={handleCloseModal} size="small">
             <CloseIcon />
           </IconButton>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 interface Translations {
   [key: string]: {
@@ -47,12 +47,11 @@ const translations: Translations = {
 };
 
 export const useTranslations = () => {
-  const language = useMemo(() => {
-    if (typeof window !== 'undefined') {
-      const userLanguage = navigator.language || navigator.languages?.[0] || 'es';
-      return userLanguage.toLowerCase().startsWith('en') ? 'en' : 'es';
-    }
-    return 'es';
+  const [language, setLanguage] = useState('es');
+
+  useEffect(() => {
+    const userLanguage = navigator.language || navigator.languages?.[0] || 'es';
+    setLanguage(userLanguage.toLowerCase().startsWith('en') ? 'en' : 'es');
   }, []);
 
   const t = useMemo(() => {
