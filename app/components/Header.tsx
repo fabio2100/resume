@@ -23,6 +23,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import LanguageIcon from '@mui/icons-material/Language';
 import CloseIcon from '@mui/icons-material/Close';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import LoadingButton from '@mui/lab/LoadingButton';
 import { useTranslations } from '@/app/hooks/useTranslations';
 
@@ -37,6 +38,7 @@ interface HeaderProps {
       email: string;
       direccion: string;
       sitioWeb: string;
+      cvpdf: string;
     };
     perfiles: {
       linkedin: string;
@@ -185,6 +187,33 @@ export default function Header({ data }: HeaderProps) {
             rel="noopener noreferrer"
           >
             <LanguageIcon />
+          </IconButton>
+          <IconButton 
+            color="inherit"
+            aria-label="Descargar CV"
+            component="a"
+            href={datosPersonales.cvpdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            download="CV_Fabio_Squizzato.pdf"
+            sx={{
+              '&:hover': {
+                animation: 'pulse 1s infinite',
+                '@keyframes pulse': {
+                  '0%': {
+                    transform: 'scale(1)',
+                  },
+                  '50%': {
+                    transform: 'scale(1.1)',
+                  },
+                  '100%': {
+                    transform: 'scale(1)',
+                  },
+                },
+              },
+            }}
+          >
+            <PictureAsPdfIcon />
           </IconButton>
         </Stack>
       </Box>

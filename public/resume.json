@@ -8,6 +8,7 @@
     "sitioWeb": "https://resume-fabio.vercel.app",
     "profesion": "Bioingeniero",
     "ocupacion": "Software Developer",
+    "cvpdf":"https://raw.githubusercontent.com/fabio2100/jsonpersonal/master/assets/CVFabioSquizzatoEsp.pdf",
     "foto": "https://cdn.jsdelivr.net/gh/fabio2100/jsonPersonal@master/images/perfil.jpg",
     "acercaDeMi": {
       "titulo": "Acerca de mi",
@@ -27,13 +28,16 @@
     "hardSkills": {
       "titulo": "Hardskills y tecnologías manejadas",
       "lista": [
-        "PACS",
-        "DICOM",
-        "Vibe Coding",
         "GitHub Copilot",
         "Claude Sonnet",
-        "",
+        "gpt",
+        "Gemini",
+        "Vibe Coding",
+        "React",
+        "NextJS",
         "NodeJS",
+        "PACS",
+        "DICOM",
         "PHP",
         "CodeIgniter",
         "Express",
@@ -50,6 +54,7 @@
       ],
       "descripcion": [
         "Código asistido por IA, vibe coding: Uso de modelos Gemini, Claude Sonnet y GPT",
+        "Protocolo Dicom y PACS: Configuración servidor Dicom, lectura, visualización, envío de estudios",
         "Comprensión tipo de aplicaciones: monolíticas y microservicios",
         "Patrón de diseño MVC",
         "Uso y creación de APIS",
