@@ -106,7 +106,7 @@ export default function Header({ data }: HeaderProps) {
       } else {
         throw new Error('Failed to send email');
       }
-    } catch (error) {
+    } catch (_) {
       setSnackbar({
         open: true,
         message: t('emailError'),
