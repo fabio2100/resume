@@ -1,6 +1,6 @@
 'use client';
 
-import { IconButton, Tooltip, Fab } from '@mui/material';
+import { Tooltip, Fab } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Language';
 import { useLanguage } from '@/app/contexts/LanguageContext';
 

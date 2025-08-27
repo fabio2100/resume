@@ -49,7 +49,7 @@ interface HeaderProps {
 
 export default function Header({ data }: HeaderProps) {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  useMediaQuery(theme.breakpoints.down('sm'));
   const { datosPersonales, perfiles } = data;
   const { t } = useTranslations();
   const [openModal, setOpenModal] = useState(false);

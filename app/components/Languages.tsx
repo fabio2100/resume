@@ -70,7 +70,7 @@ export default function Languages({ data }: LanguagesProps) {
           </Box>
 
           <Stack spacing={2}>
-            {idiomas.cursosIngles.map((curso: any, index: number) => (
+            {idiomas.cursosIngles.map((curso: { nombre: string; institucion: string; fecha: string; url?: string }, index: number) => (
               <Paper
                 key={index}
                 variant="outlined"

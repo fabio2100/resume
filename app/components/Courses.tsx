@@ -1,7 +1,7 @@
 // app/components/Courses.tsx
 'use client';
 
-import { Box, Typography, Paper, Divider, Link, Grid } from '@mui/material';
+import { Box, Typography, Paper, Divider, Link } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { useTranslations } from '@/app/hooks/useTranslations';
@@ -39,7 +39,7 @@ export default function Courses({ data }: CoursesProps) {
         },
         gap: 2
       }}>
-        {cursos.lista.map((curso: any, index: number) => (
+        {cursos.lista.map((curso: { nombre: string; lugar: string; url?: string }, index: number) => (
           <Paper
             key={index}
             elevation={1}

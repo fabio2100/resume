@@ -32,7 +32,7 @@ export default function Experience({ data }: ExperienceProps) {
       <Divider sx={{ mb: 2 }} />
 
       <Stack spacing={3}>
-        {experienciaLaboral.lista.map((exp: any, index: number) => (
+        {experienciaLaboral.lista.map((exp: { puesto: string; empresa: string; fecha: string; responsabilidades: string[]; tecnologias?: string[] }, index: number) => (
           <Paper 
             key={index} 
             elevation={1} 

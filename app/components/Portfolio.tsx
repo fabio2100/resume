@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { 
   Box, 
   Typography, 
-  Paper, 
   Divider, 
   Chip, 
   Link, 
@@ -50,9 +49,9 @@ export default function Portfolio({ data }: PortfolioProps) {
   const { portfolio } = data;
   const { t } = useTranslations();
   const [openDialog, setOpenDialog] = useState(false);
-  const [selectedProject, setSelectedProject] = useState<any>(null);
+  const [selectedProject, setSelectedProject] = useState<PortfolioProps['data']['portfolio']['lista'][0] | null>(null);
 
-  const handleOpenDialog = (project: any) => {
+  const handleOpenDialog = (project: PortfolioProps['data']['portfolio']['lista'][0]) => {
     setSelectedProject(project);
     setOpenDialog(true);
   };
@@ -78,7 +77,7 @@ export default function Portfolio({ data }: PortfolioProps) {
         },
         gap: 2
       }}>
-        {portfolio.lista.map((project: any, index: number) => (
+        {portfolio.lista.map((project: PortfolioProps['data']['portfolio']['lista'][0], index: number) => (
           <Card 
             key={index}
             elevation={2}

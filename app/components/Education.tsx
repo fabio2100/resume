@@ -31,7 +31,7 @@ export default function Education({ data }: EducationProps) {
       <Divider sx={{ mb: 2 }} />
 
       <Stack spacing={3}>
-        {educacion.lista.map((edu: any, index: number) => (
+        {educacion.lista.map((edu: { nombre: string; institucion: string; fecha: string; data?: string[] }, index: number) => (
           <Paper 
             key={index} 
             elevation={1} 

@@ -4,14 +4,95 @@ import { useState, useEffect } from 'react';
 import { useLanguage } from '@/app/contexts/LanguageContext';
 
 interface ResumeData {
-  datosPersonales: any;
-  perfiles: any;
-  habilidades: any;
-  idiomas: any;
-  cursos: any;
-  experienciaLaboral: any;
-  educacion: any;
-  portfolio: any;
+  datosPersonales: {
+    nombre: string;
+    fechaNacimiento: string;
+    telefono: string;
+    email: string;
+    direccion: string;
+    sitioWeb: string;
+    profesion: string;
+    ocupacion: string;
+    cvpdf: string;
+    foto: string;
+    acercaDeMi: {
+      titulo: string;
+      descripcion: string;
+    };
+  };
+  perfiles: {
+    linkedin: string;
+    github: string;
+    w3Schools: string;
+    facebook: string;
+    instagram: string;
+    matlab: string;
+  };
+  habilidades: {
+    titulo: string;
+    hardSkills: {
+      titulo: string;
+      lista: string[];
+      descripcion: string[];
+    };
+    softSkills: {
+      titulo: string;
+      descripcion: string[];
+    };
+  };
+  idiomas: {
+    titulo: string;
+    lista: string[];
+    cursosIngles: Array<{
+      nombre: string;
+      institucion: string;
+      fecha: string;
+      url?: string;
+    }>;
+  };
+  cursos: {
+    titulo: string;
+    lista: Array<{
+      nombre: string;
+      lugar: string;
+      url?: string;
+    }>;
+  };
+  experienciaLaboral: {
+    titulo: string;
+    lista: Array<{
+      puesto: string;
+      empresa: string;
+      fecha: string;
+      responsabilidades: string[];
+      tecnologias?: string[];
+    }>;
+  };
+  educacion: {
+    titulo: string;
+    lista: Array<{
+      nombre: string;
+      institucion: string;
+      fecha: string;
+      data?: string[];
+    }>;
+  };
+  portfolio: {
+    titulo: string;
+    lista: Array<{
+      nombre: string;
+      tecnologias: string[];
+      descripcion: string;
+      urls: Array<{
+        urlProyecto?: string;
+        urlRepositorio?: string;
+        urlVideo?: string;
+        urlMincyt?: string;
+        urlArgentinaGob?: string;
+        urlLaNacionDiario?: string;
+      }>;
+    }>;
+  };
 }
 
 export const useResumeData = () => {
