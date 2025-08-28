@@ -1,6 +1,7 @@
 'use client';
 
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeProvider as MuiThemeProvider, createTheme, PaletteMode } from '@mui/material/styles';
@@ -51,6 +52,20 @@ export default function RootLayout({
             )}
           </ThemeProvider>
         </AppRouterCacheProvider>
+        
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-6W9EH5B21V"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6W9EH5B21V');
+          `}
+        </Script>
       </body>
     </html>
   );
