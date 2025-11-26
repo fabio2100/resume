@@ -229,37 +229,37 @@ export default function Portfolio({ data }: PortfolioProps) {
               {selectedProject.urls && selectedProject.urls.length > 0 && (
                 <Box sx={{ mt: 2 }}>
                   <Typography variant="subtitle1" sx={{ mb: 1, fontWeight: 'bold' }}>
-                    Enlaces:
+                    {t('links')}:
                   </Typography>
                   <Stack spacing={1}>
                     {selectedProject.urls[0].urlProyecto && (
                       <Link href={selectedProject.urls[0].urlProyecto} target="_blank" rel="noopener noreferrer">
-                        🌐 Ver proyecto en vivo
+                        🌐 {t('liveProject')}
                       </Link>
                     )}
                     {selectedProject.urls[0].urlRepositorio && (
                       <Link href={selectedProject.urls[0].urlRepositorio} target="_blank" rel="noopener noreferrer">
-                        📂 Repositorio en GitHub
+                        📂 {t('githubRepository')}
                       </Link>
                     )}
                     {selectedProject.urls[0].urlVideo && (
                       <Link href={selectedProject.urls[0].urlVideo} target="_blank" rel="noopener noreferrer">
-                        🎥 Ver video
+                        🎥 {t('viewVideo')}
                       </Link>
                     )}
                     {selectedProject.urls[0].urlMincyt && (
                       <Link href={selectedProject.urls[0].urlMincyt} target="_blank" rel="noopener noreferrer">
-                        🏆 Reconocimiento MINCYT
+                        🏆 {t('mincytRecognition')}
                       </Link>
                     )}
                     {selectedProject.urls[0].urlArgentinaGob && (
                       <Link href={selectedProject.urls[0].urlArgentinaGob} target="_blank" rel="noopener noreferrer">
-                        🏛️ Argentina.gob.ar
+                        🏛️ {t('argentinaGov')}
                       </Link>
                     )}
                     {selectedProject.urls[0].urlLaNacionDiario && (
                       <Link href={selectedProject.urls[0].urlLaNacionDiario} target="_blank" rel="noopener noreferrer">
-                        📰 La Nación
+                        📰 {t('laNacion')}
                       </Link>
                     )}
                   </Stack>
