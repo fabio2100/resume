@@ -198,7 +198,7 @@ export default function Portfolio({ data }: PortfolioProps) {
       >
         {selectedProject && (
           <>
-            <DialogTitle sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <DialogTitle component="div" sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <Typography variant="h5" component="h2">
                 {selectedProject.nombre}
               </Typography>
